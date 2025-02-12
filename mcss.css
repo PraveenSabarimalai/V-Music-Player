@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+
+:root {
+    --bg01: linear-gradient(135deg,
+            #08f758 0%,
+            #01060f 100%);
+
+    --bg02: linear-gradient(135deg,
+            #44c2e9,
+            #115bee);
+
+    --bg03: linear-gradient(135deg,
+            #2C3136,
+            #1D2023);
+
+    --bg04: #040404;
+
+    --border01: #22262A;
+    --border02: #1A1D21;
+
+    --box-shadow01:
+        6px 6px 10px #151618,
+        -6px -6px 10px #2c3136,
+        inset 2px 2px 6px #33353b,
+        inset -3px -3px 6px #151618;
+
+    --box-shadow02:
+        -6px -6px 10px #151618,
+        6px 6px 10px #2c3136,
+        inset 2px 2px 6px #33353b,
+        inset -3px -3px 6px #151618;
+
+    --box-shadow03:
+        6px 6px 12px #151618,
+        -6px -6px 12px #2c3136;
+
+    --box-shadow04:
+        inset 2px 2px 3px -2px rgba(167, 169, 171, 0.322),
+        inset 0px -1px 1px 0px #4a4c4e;
+
+    --box-shadow05:
+        8px 8px 12px #151618,
+        -2px -2px 10px #2c3136,
+        inset 2px 2px 3px #33353b,
+        inset -2px -2px 3px #151618;
+
+    --box-shadow06:
+        10px 10px 12px #151618,
+        -10px -10px 12px #222529,
+        inset 4px 4px 8px #33353b,
+        inset -4px -4px 8px #151618;
+
+    --box-shadow07:
+        10px 10px 12px #151618,
+        -10px -10px 12px #222529,
+        inset -4px -4px 8px #33353b,
+        inset 4px 4px 8px #151618;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: var(--bg01);
+}
+
+.wrapper {
+    max-width: 900px;
+    height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header,
+.song-timer,
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header .hdbtn {
+    background: var(--bg02);
+    border: 2px solid var(--border01);
+    box-shadow: var(--box-shadow01);
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    color: #d10b78;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.hdbtn:active {
+    box-shadow: var(--box-shadow02);
+}
+
+header h3 {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #86898C;
+}
+
+.player {
+    margin-top: 2rem;
+}
+
+img {
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+    object-fit: cover;
+    border: 10px solid var(--border02);
+    border-radius: 50%;
+    box-shadow: var(--box-shadow03);
+}
+
+.name {
+    color: hsl(210, 93%, 49%);
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.artist {
+    color: #0b43eb;
+    font-size: 14px;
+    text-transform: capitalize;
+    padding: 10px 0 20px 0;
+}
+
+.audioC {
+    margin: 30px 0px 30px 0px;
+}
+
+.song-timer {
+    margin-bottom: 20px;
+}
+
+.song-timer span {
+    font-size: 10px;
+    font-weight: 800;
+    color: #7C7D80;
+}
+
+.progress-area {
+    height: 7px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 50px;
+    background: var(--bg04);
+    box-shadow: var(--box-shadow04);
+    cursor: pointer;
+}
+
+.progress-area .progress-bar {
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #bf2311 0%, #e1530a 80%);
+    box-shadow: var(--box-shadow04);
+}
+
+.progress-bar::before {
+    content: "";
+    position: absolute;
+    background: var(--bg02);
+    box-shadow: var(--box-shadow05);
+    border-radius: 50%;
+    top: 50%;
+    right: -14px;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    outline: none;
+    border: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: opacity 0.2s ease;
+}
+
+.progress-bar::after {
+    content: "";
+    position: absolute;
+    background: #e1530a;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    z-index: 2;
+    width: 10px;
+    height: 10px;
+    outline: none;
+    border: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: opacity 0.2s ease;
+}
+
+
+.controls {
+    margin: 55px 8px 5px 8px;
+}
+
+.btnC {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--border02);
+    transition: all 0.2s ease;
+    background: var(--bg03);
+    box-shadow: var(--box-shadow06)
+}
+
+.btnC:active {
+    box-shadow: var(--box-shadow07);
+}
+
+.controls i {
+    font-size: 20px;
+    user-select: none;
+    color: #A7A9AB;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls .play-pause {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.play-pause i {
+    text-align: center;
+    color: #fff;
+}
+
+.play-pause {
+    border: 3px solid #ce4b0e;
+    background: linear-gradient(135deg,
+            #bd2210,
+            #e5550b);
+    box-shadow:
+        10px 10px 12px #151618,
+        -10px -10px 12px #222529,
+        inset 4px 4px 8px #e5550b,
+        inset -4px -4px 8px #bd2210;
+    transition: all 0.2s ease;
+}
+
+.play-pause:active {
+    box-shadow:
+        10px 10px 12px #151618,
+        -10px -10px 12px #222529,
+        inset -10px -10px 12px #e5550b,
+        inset 10px 10px 12px #bd2210;
+}
+
+.rotate {
+    animation: rotation 8s infinite linear;
+    transform-origin: center;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}

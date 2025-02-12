@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Music Player</title>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <link rel="stylesheet" href="mcss.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <button class="hdbtn"><i class="fi fi-sr-arrow-small-left"></i></button>
+            <h3 class="p-now">Playing Now</h3>
+            <button class="hdbtn"><i class="fi fi-sr-list"></i></button>
+        </header>
+
+        <div class="player">
+
+            <div class="img-area">
+                <img src="https://www.hindustantimes.com/ht-img/img/2024/02/02/1600x900/Vijay_2_1706886157809_1706886228142.jpg"
+                    alt="">
+            </div>
+
+            <div class="song-details">
+                <h1 class="name">Vijay Music Player</h1>
+                <h3 class="artist">Created by @Praveen S</h3>
+            </div>
+
+            <div class="audioC">
+                <div class="song-timer">
+                    <span class="current-time">0:00</span>
+                    <span class="max-duration">0:00</span>
+                </div>
+                <div class="progress-area">
+                    <div class="progress-bar">
+                        <audio id="main-audio" src="songs/music-7.mp3"></audio>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btnC" id="prev">
+                    <i class="fi fi-sr-rewind"></i>
+                </button>
+                <button class="play-pause btnC">
+                    <i class="fi fi-sr-play play"></i>
+                </button>
+                <button class="btnC" id="next">
+                    <i class="fi fi-sr-forward"></i>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="music-list.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
